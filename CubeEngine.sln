@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cube_Editor_Window", "Cube_Editor_Window\Cube_Editor_Window.vcxproj", "{0E84905D-D899-4145-8EF2-55632C33866B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CubeEngine_SOURCE", "CubeEngine_SOURCE\CubeEngine_SOURCE.vcxitems", "{FBCBF17E-BE54-40A0-BC9C-26E055E760FB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CubeEngine_Window", "CubeEngine_Window\CubeEngine_Window.vcxproj", "{96619B2E-E32A-436E-AE2C-045DA4C4086C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,11 +25,22 @@ Global
 		{0E84905D-D899-4145-8EF2-55632C33866B}.Release|x64.Build.0 = Release|x64
 		{0E84905D-D899-4145-8EF2-55632C33866B}.Release|x86.ActiveCfg = Release|Win32
 		{0E84905D-D899-4145-8EF2-55632C33866B}.Release|x86.Build.0 = Release|Win32
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Debug|x64.ActiveCfg = Debug|x64
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Debug|x64.Build.0 = Debug|x64
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Debug|x86.ActiveCfg = Debug|Win32
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Debug|x86.Build.0 = Debug|Win32
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Release|x64.ActiveCfg = Release|x64
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Release|x64.Build.0 = Release|x64
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Release|x86.ActiveCfg = Release|Win32
+		{96619B2E-E32A-436E-AE2C-045DA4C4086C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {160DC6D5-14F2-4E1C-A1F6-5B733B28FC5C}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CubeEngine_SOURCE\CubeEngine_SOURCE.vcxitems*{fbcbf17e-be54-40a0-bc9c-26e055e760fb}*SharedItemsImports = 9
 	EndGlobalSection
 EndGlobal
