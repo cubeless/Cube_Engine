@@ -41,6 +41,8 @@ Global
 		SolutionGuid = {160DC6D5-14F2-4E1C-A1F6-5B733B28FC5C}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CubeEngine_SOURCE\CubeEngine_SOURCE.vcxitems*{0e84905d-d899-4145-8ef2-55632c33866b}*SharedItemsImports = 4
+		CubeEngine_SOURCE\CubeEngine_SOURCE.vcxitems*{96619b2e-e32a-436e-ae2c-045da4c4086c}*SharedItemsImports = 4
 		CubeEngine_SOURCE\CubeEngine_SOURCE.vcxitems*{fbcbf17e-be54-40a0-bc9c-26e055e760fb}*SharedItemsImports = 9
 	EndGlobalSection
 EndGlobal

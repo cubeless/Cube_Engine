@@ -3,6 +3,9 @@
 
 #include "framework.h"
 #include "Cube_Editor_Window.h"
+#include "..\\CubeEngine_SOURCE\\CubeApplication.h"
+
+cube::Application application;
 
 #define MAX_LOADSTRING 100
 
@@ -75,6 +78,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         {
             // 메세지가 없을경우 여기서 처리
             // 게임 로직이 들어간다.
+
+            application.Run();
         }
     }
 
@@ -126,6 +131,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
+   //핸들이 나오는 코드 구간
+   application.Initialize(hWnd);
+
    if (!hWnd)
    {
       return FALSE;
@@ -174,34 +182,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-
-            HBRUSH blueBrush = CreateSolidBrush(RGB(0, 0, 255));
-
-            //파랑 브러쉬 dc에 선택 그리고 흰색 브러쉬로 반환
-            HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blueBrush);
-            Rectangle(hdc, 100, 100, 200, 200);
-
-            //다시 흰색 원본 브러쉬로 선택
-            SelectObject(hdc, oldBrush);
-            //파란 브러쉬 삭제
-            DeleteObject(blueBrush);
-
-            HPEN redPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
-            HPEN oldPen = (HPEN)SelectObject(hdc, redPen);
-
-            Ellipse(hdc, 200, 200, 300, 300);
-
-            SelectObject(hdc, oldPen);
-            DeleteObject(redPen);
-
-            // 기본적으로 자주 사용되는 GDI 오브젝트를 미리 DC 안에 만들어 두는데
-            // 그 오브젝트들을 스톡 오브젝트라고 한다.
-            HBRUSH grayBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);
-            oldBrush = (HBRUSH)SelectObject(hdc, grayBrush);
-
-            Rectangle(hdc, 400, 400, 500, 500);
-            SelectObject(hdc, oldPen);
-
+            // mHdc (application.render()로 이동)
+            // 이 구간은 앱 실행시 한번만 실행
 
             EndPaint(hWnd, &ps);
         }
