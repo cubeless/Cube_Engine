@@ -1,4 +1,5 @@
 #include "CubeApplication.h"
+#include "Cubeinput.h"
 
 namespace cube
 {
@@ -19,6 +20,9 @@ namespace cube
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 		mPlayer.SetPosition(0, 0);
+
+		// 키보드 인풋 초기화
+		Input::Initailize();
 	}
 	void Application::Run()
 	{
@@ -28,6 +32,9 @@ namespace cube
 	}
 	void Application::update()
 	{
+		// 키보드 인풋 업데이트
+		Input::Update();
+
 		mPlayer.update();
 
 		// 내가 오른쪽 키를 입력받았으면 X 좌표가 플러스

@@ -1,4 +1,5 @@
 #include "cubeGameObject.h"
+#include "Cubeinput.h" //전부 알필요는 없다 cpp에 추가
 
 namespace cube
 {
@@ -10,27 +11,50 @@ namespace cube
 	}
 	void GameObject::update()
 	{
-		
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		if (Input::GetKey(eKeyCode::A))
 		{
 			mX -= 0.01f;
-			//
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		if (Input::GetKey(eKeyCode::D))
 		{
 			mX += 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		if (Input::GetKey(eKeyCode::W))
 		{
 			mY -= 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		if (Input::GetKey(eKeyCode::S))
 		{
 			mY += 0.01f;
 		}
+
+		// 키 두개를 동시에 눌러야 할 경우
+		// if (Input::GetKey(eKeyCode::A) && Input::GetKey(eKeyCode::D))
+
+		//위 코드로 대체
+		//if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		//{
+		//	mX -= 0.01f;
+		//	//
+		//}
+
+		//if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		//{
+		//	mX += 0.01f;
+		//}
+
+		//if (GetAsyncKeyState(VK_UP) & 0x8000)
+		//{
+		//	mY -= 0.01f;
+		//}
+
+		//if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		//{
+		//	mY += 0.01f;
+		//}
 
 	}
 	void GameObject::LateUpdate()

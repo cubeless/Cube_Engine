@@ -11,17 +11,36 @@ namespace cube
 		None,
 	};
 
-	class input
+	enum class eKeyCode
+	{
+		Q, W, E, R, T, Y, U, I, O, P,
+		A, S, D, F, G, H, J, K, L,
+		Z, X, C, V, B, N, M,
+		End,
+	};
+
+	class Input
 	{
 	public:
 		struct Key
 		{
-			char KeyCode;
+			eKeyCode KeyCode;
+			eKeyState state;
+			bool bPressed;
 
 		};
 
+		static void Initailize();
+		static void Update();
+
+		static bool GetKeyDown(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Down; }
+		static bool GetKeyUp(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Up; }
+		static bool GetKey(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Pressed; }
+
 
 	private:
+		// static 전역변수 - 어디서든 변수 설정 가능
+		static std::vector<Key> mKeys;
 		
 
 	};
