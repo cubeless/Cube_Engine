@@ -13,15 +13,15 @@ namespace cube
 
 	void Input::Initailize()
 	{
-		CreateKeys();
+		createKeys();
 	}
 
 	void Input::Update()
 	{
-		UpdateKeys();
+		updateKeys();
 	}
 
-	void Input::CreateKeys()
+	void Input::createKeys()
 	{
 		// typedef unsigned int		UINT;  원하는 이름으로 재정의 
 		// typedef unsigned __int64 size_t;
@@ -36,7 +36,7 @@ namespace cube
 		}
 	}
 
-	void Input::UpdateKeys()
+	void Input::updateKeys()
 	{
 		for (size_t i = 0; i < mKeys.size(); i++)
 		{

@@ -41,8 +41,8 @@ namespace cube
 	private:
 		// static 전역변수 - 어디서든 변수 설정 가능
 		static std::vector<Key> mKeys;
-		static void CreateKeys();
-		static void UpdateKeys();
+		static void createKeys();
+		static void updateKeys();
 		
 
 	};
