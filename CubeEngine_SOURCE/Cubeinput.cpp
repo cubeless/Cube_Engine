@@ -8,10 +8,20 @@ namespace cube
 	{
 		'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
 		'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-		'Z', 'X', 'C', 'V', 'B', 'N', 'M',
+		'Z', 'X', 'C', 'V', 'B', 'N', 'M', VK_LEFT, VK_RIGHT, VK_DOWN, VK_UP,
 	};
 
 	void Input::Initailize()
+	{
+		CreateKeys();
+	}
+
+	void Input::Update()
+	{
+		UpdateKeys();
+	}
+
+	void Input::CreateKeys()
 	{
 		// typedef unsigned int		UINT;  원하는 이름으로 재정의 
 		// typedef unsigned __int64 size_t;
@@ -24,9 +34,9 @@ namespace cube
 
 			mKeys.push_back(key);
 		}
-
 	}
-	void Input::Update()
+
+	void Input::UpdateKeys()
 	{
 		for (size_t i = 0; i < mKeys.size(); i++)
 		{
@@ -42,7 +52,7 @@ namespace cube
 			}
 
 			// 키를 안누른 경우
-			else 
+			else
 			{
 				// 이전 프레임에 눌려져 있었다 up
 				if (mKeys[i].bPressed == true)
@@ -55,3 +65,4 @@ namespace cube
 		}
 	}
 }
+

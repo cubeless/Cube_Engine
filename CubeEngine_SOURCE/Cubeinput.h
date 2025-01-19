@@ -15,7 +15,7 @@ namespace cube
 	{
 		Q, W, E, R, T, Y, U, I, O, P,
 		A, S, D, F, G, H, J, K, L,
-		Z, X, C, V, B, N, M,
+		Z, X, C, V, B, N, M, Left, Right, Up, Down,
 		End,
 	};
 
@@ -41,6 +41,8 @@ namespace cube
 	private:
 		// static 전역변수 - 어디서든 변수 설정 가능
 		static std::vector<Key> mKeys;
+		static void CreateKeys();
+		static void UpdateKeys();
 		
 
 	};
