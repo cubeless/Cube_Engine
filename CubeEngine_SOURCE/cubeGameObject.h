@@ -1,6 +1,7 @@
 #pragma once
 #include "commoninclude.h"
 
+
 namespace cube
 {
 	//Actor

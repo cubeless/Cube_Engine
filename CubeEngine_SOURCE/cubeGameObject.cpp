@@ -1,5 +1,6 @@
 #include "cubeGameObject.h"
 #include "Cubeinput.h" //전부 알필요는 없다 cpp에 추가
+#include "CubeTime.h"
 
 namespace cube
 {
@@ -11,24 +12,26 @@ namespace cube
 	}
 	void GameObject::update()
 	{
+		const int speed = 100.0f;
+
 		if (Input::GetKey(eKeyCode::A) or Input::GetKey(eKeyCode::Left))
 		{
-			mX -= 0.01f;
+			mX -= speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::D) or Input::GetKey(eKeyCode::Right))
 		{
-			mX += 0.01f;
+			mX += speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::W) or Input::GetKey(eKeyCode::Down))
 		{
-			mY -= 0.01f;
+			mY -= speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::S) or Input::GetKey(eKeyCode::Up))
 		{
-			mY += 0.01f;
+			mY += speed * Time::DeltaTime();
 		}
 
 		// 키 두개를 동시에 눌러야 할 경우

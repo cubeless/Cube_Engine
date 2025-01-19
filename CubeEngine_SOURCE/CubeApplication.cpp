@@ -1,5 +1,6 @@
 #include "CubeApplication.h"
 #include "Cubeinput.h"
+#include "CubeTime.h"
 
 namespace cube
 {
@@ -23,9 +24,11 @@ namespace cube
 
 		// 키보드 인풋 초기화
 		Input::Initailize();
+		Time::Initailize();
 	}
 	void Application::Run()
 	{
+
 		update();
 		LateUpdate();
 		Render();
@@ -34,6 +37,7 @@ namespace cube
 	{
 		// 키보드 인풋 업데이트
 		Input::Update();
+		Time::Update();
 
 		mPlayer.update();
 
@@ -75,6 +79,8 @@ namespace cube
 	void Application::Render()
 	{
 		mPlayer.Render(mHdc);
+
+		Time::Render(mHdc);
 
 	}
 	
